@@ -18,8 +18,8 @@ class ProductController extends Controller
     public function showCountry($id = null)
     {
         $countryAPIUrl = "http://127.0.0.1:8000/json/$id";
-        $response = Http::get($countryAPIUrl);
-        $data = json_decode($response, true);
+        $country = Http::get($countryAPIUrl);
+        $data = json_decode($country, true);
         $pretty_json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
         return view('country', compact('pretty_json'));
@@ -31,5 +31,11 @@ class ProductController extends Controller
         $pretty_json = json_encode($data,JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
         return view('ip', compact('pretty_json'));
+    }
+    public function showAreaCode($ac = null){
+        $areaUrl = "http://127.0.0.1:8002/areacode/$ac";
+        $areacode = Http::get($areaUrl);
+        $data = json_decode($areacode, true);
+        $pretty_json = json_encode($data,JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }
 }

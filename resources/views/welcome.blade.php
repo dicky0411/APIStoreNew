@@ -152,32 +152,29 @@
             </div>
         </div>
             
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://qph.cf2.quoracdn.net/main-qimg-a32632a5d0ca56704d44573395cdcef0.webp" class="card-img-top" alt="Area Code">
-                    <div class="card-body">
-                        <h5 class="card-title">Area Code API</h5>
-                        <p class="card-text">Retrieve area code information for any region, including location details and timezone.</p>
-                    </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://qph.cf2.quoracdn.net/main-qimg-a32632a5d0ca56704d44573395cdcef0.webp" class="card-img-top" alt="Area Code Info">
+                <div class="card-body">
+                    <h5 class="card-title">Area Code API</h5>
+                    <p class="card-text">Retrieve area code information for any region, including location details and timezone</p>
+                    <form onsubmit="redirectToJson3(event)">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="area-code" placeholder="Enter area code" required>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
                     <div class="card-footer">
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#" class="btn btn-primary" onclick="navigateTo('area-code')">Go Detail</a>
-                    </div>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://www.nyk.com/english/common/img/ir_stock_im02.jpg" class="card-img-top" alt="Stocks">
-                    <div class="card-body">
-                        <h5 class="card-title">Stock API</h5>
-                        <p class="card-text">Real time stock information with every exchanges</p>
-                    </div>
-                    <div class="card-footer">
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#" class="btn btn-primary" onclick="navigateTo('stocks')">Go Detail</a>
-                    </div>
-                </div>
-            </div>
+        </div>
+            
+           
         </div>
     </div>
 
@@ -273,6 +270,11 @@
             event.preventDefault();
             const regionCode = document.getElementById('region-code').value;
             window.location.href = `http://127.0.0.1:8001/region/${regionCode}`;
+    }
+        function redirectToJson3(event) {
+            event.preventDefault();
+            const areaCode = document.getElementById('area-code').value;
+            window.location.href = `http://127.0.0.1:8002/areacode/${areaCode}`;
     }
         function navigateTo(sectionId) {
             document.querySelectorAll('.container').forEach(container => {
