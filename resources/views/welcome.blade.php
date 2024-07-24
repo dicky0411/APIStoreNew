@@ -115,7 +115,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Country Info API</h5>
                     <p class="card-text">Get detailed information about countries, including demographics, economics, and more.</p>
-                    <form onsubmit="redirectToJson(event)">
+                    <form onsubmit="redirectToJson1(event)">
                         <div class="input-group">
                             <input type="text" class="form-control" id="country-code" placeholder="Enter country code" required>
                             <div class="input-group-append">
@@ -130,19 +130,28 @@
                 </div>
             </div>
         </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/PR/NL/LS/79058348/desktop-computer.jpg" class="card-img-top" alt="IP Region">
-                    <div class="card-body">
-                        <h5 class="card-title">IP Region API</h5>
-                        <p class="card-text">Identify the region associated with an IP address, including country, city, and ISP.</p>
-                    </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/PR/NL/LS/79058348/desktop-computer.jpg" class="card-img-top" alt="Region IP Info">
+                <div class="card-body">
+                    <h5 class="card-title">Region IP API</h5>
+                    <p class="card-text">Identify the region associated with an IP address, including country, city, and ISP</p>
+                    <form onsubmit="redirectToJson2(event)">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="region-code" placeholder="Enter ip address" required>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
                     <div class="card-footer">
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#" class="btn btn-primary" onclick="navigateTo('ip-region')">Go Detail</a>
-                    </div>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                </div>
                 </div>
             </div>
+        </div>
+            
             <div class="col-md-4">
                 <div class="card">
                     <img src="https://qph.cf2.quoracdn.net/main-qimg-a32632a5d0ca56704d44573395cdcef0.webp" class="card-img-top" alt="Area Code">
@@ -172,71 +181,11 @@
         </div>
     </div>
 
-    <!-- New Screens -->
-    <div class="container" id="country-info">
-        <button class="btn btn-secondary back-button" onclick="navigateBack()">Back</button>
-            <div class="info-section">
-                <p><strong>Country:</strong> {{ $country ?? 'Not Available' }}</p>
-                <p><strong>Code:</strong> {{ $code ?? 'Not Available' }}</p>
-                <p><strong>Traditional Chinese:</strong> {{ $tw ?? 'Not Available' }}</p>
-                <p><strong>Locale:</strong> {{ $locale ?? 'Not Available' }}</p>
-                <p><strong>Simplified Chinese:</strong> {{ $zh ?? 'Not Available' }}</p>
-                <p><strong>Latitude:</strong> {{ $lat ?? 'Not Available' }}</p>
-                <p><strong>Longitude:</strong> {{ $lng ?? 'Not Available' }}</p>
-                <p><strong>Emoji:</strong> {{ $emoji ?? 'Not Available' }}</p>
-            </div>
-        </div>
-    </div>
-    <div class="container" id="ip-region">
-        <button class="btn btn-secondary back-button" onclick="navigateBack()">Back</button>
-            <div class="card">
-            <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/PR/NL/LS/79058348/desktop-computer.jpg" class="card-img-top" alt="IP Region Info">
-                <div class="card-body">
-                <h2 class="card-title">IP REGION API Details</h2>
-                <p class="card-text">Identify the region associated with an IP address, including country, city, and ISP:</p>
-                <ul>
-                    <li>Accurate IP Addresses</li>
-                    <li>Cross Country in seconds</li>
-                    <li>Reliable and Precise</li>
-                </ul>
-                <p><strong>Pricing:</strong> $0.005 per request, $5 per 1000 requests.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container" id="area-code">
-        <button class="btn btn-secondary back-button" onclick="navigateBack()">Back</button>
-            <div class="card">
-            <img src="https://qph.cf2.quoracdn.net/main-qimg-a32632a5d0ca56704d44573395cdcef0.webp" class="card-img-top" alt="IP Region Info">
-                <div class="card-body">
-                <h2 class="card-title">Area Code API Details</h2>
-                <p class="card-text">Retrieve area code information, including:</p>
-                <ul>
-                    <li>Location Details</li>
-                    <li>Timezone Information</li>
-                    <li>Associated Cities and Regions</li>
-                    <li>Carrier Information</li>
-                </ul>
-                <p><strong>Pricing:</strong> $0.005 per request, $5 per 1000 requests.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container" id="stocks">
-        <button class="btn btn-secondary back-button" onclick="navigateBack()">Back</button>
-            <div class="card">
-            <img src="https://www.nyk.com/english/common/img/ir_stock_im02.jpg" class="card-img-top" alt="Stock  Info">
-                <div class="card-body">
-                <h2 class="card-title">Stocks Details</h2>
-                <p class="card-text">Delivers real time stocks details including various metrics, such as:</p>
-                <ul>
-                    <li>Real time stock prices</li>
-                    <li>Stock Valuations</li>
-                    <li>Market Caps</li>
-                    <li>Future Predictabilities</li>
-                </ul>
-                <p><strong>Pricing:</strong> $0.005 per request, $5 per 1000 requests.</p>
-            </div>
-        </div>
-    </div>
+
+    
+    
+    
+    
     <!-- CYCLE THROUGH THE BACKEND API DATA --> 
 <div class="container" id="main-content">
     <div class="row">
@@ -315,10 +264,15 @@
 
 
     <script>
-        function redirectToJson(event) {
+        function redirectToJson1(event) {
             event.preventDefault();
             const countryCode = document.getElementById('country-code').value;
-            window.location.href = `http://127.0.0.1:8001/json/${countryCode}`;
+            window.location.href = `http://127.0.0.1:8000/json/${countryCode}`;
+    }
+        function redirectToJson2(event) {
+            event.preventDefault();
+            const regionCode = document.getElementById('region-code').value;
+            window.location.href = `http://127.0.0.1:8001/region/${regionCode}`;
     }
         function navigateTo(sectionId) {
             document.querySelectorAll('.container').forEach(container => {

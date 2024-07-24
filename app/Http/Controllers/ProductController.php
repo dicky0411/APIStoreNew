@@ -24,4 +24,12 @@ class ProductController extends Controller
 
         return view('country', compact('pretty_json'));
     }
+    public function showRegion($ip = null){
+        $IpApiUrl = "http://127.0.0.1:8001/region/$ip";
+        $regionIP = Http::get($IpApiUrl);
+        $data = json_decode($regionIP, true);
+        $pretty_json = json_encode($data,JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+        return view('ip', compact('pretty_json'));
+    }
 }

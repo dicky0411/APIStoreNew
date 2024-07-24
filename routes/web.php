@@ -17,3 +17,4 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('products
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::get('/country/{id?}', [ProductController::class, 'showCountry'])->name('country.show');
+Route::get('/region/{code?}', [ProductController::class, 'showRegion'])->name('ip.show');
