@@ -115,10 +115,18 @@
                 <div class="card-body">
                     <h5 class="card-title">Country Info API</h5>
                     <p class="card-text">Get detailed information about countries, including demographics, economics, and more.</p>
-                </div>
-                <div class="card-footer">
+                    <form onsubmit="redirectToJson(event)">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="country-code" placeholder="Enter country code" required>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="card-footer">
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <a href="#" class="btn btn-primary" onclick="navigateTo('country-info')">Go Detail</a>
+
+                </div>
                 </div>
             </div>
         </div>
@@ -307,6 +315,11 @@
 
 
     <script>
+        function redirectToJson(event) {
+            event.preventDefault();
+            const countryCode = document.getElementById('country-code').value;
+            window.location.href = `http://127.0.0.1:8001/json/${countryCode}`;
+    }
         function navigateTo(sectionId) {
             document.querySelectorAll('.container').forEach(container => {
                 container.style.display = 'none';

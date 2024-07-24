@@ -14,3 +14,6 @@ Route::get('/json/{id}', [ProductController::class,'showCountry'])->name('showCo
 // Correct the routes for ProductController
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+
+Route::get('/', [ProductController::class, 'index'])->name('home');
+Route::get('/country/{id?}', [ProductController::class, 'showCountry'])->name('country.show');
