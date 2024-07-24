@@ -167,18 +167,15 @@
     <!-- New Screens -->
     <div class="container" id="country-info">
         <button class="btn btn-secondary back-button" onclick="navigateBack()">Back</button>
-            <div class="card">
-            <img src="https://geology.com/world/world-map.gif" class="card-img-top" alt="Country Info">
-                <div class="card-body">
-                <h2 class="card-title">Country Info API Details</h2>
-                <p class="card-text">Get detailed information about countries, including:</p>
-                <ul>
-                    <li>Demographics</li>
-                    <li>Economic Indicators</li>
-                    <li>Geographical Information</li>
-                    <li>Historical Data</li>
-                </ul>
-                <p><strong>Pricing:</strong> $0.01 per request, $10 per 1000 requests.</p>
+            <div class="info-section">
+                <p><strong>Country:</strong> {{ $country ?? 'Not Available' }}</p>
+                <p><strong>Code:</strong> {{ $code ?? 'Not Available' }}</p>
+                <p><strong>Traditional Chinese:</strong> {{ $tw ?? 'Not Available' }}</p>
+                <p><strong>Locale:</strong> {{ $locale ?? 'Not Available' }}</p>
+                <p><strong>Simplified Chinese:</strong> {{ $zh ?? 'Not Available' }}</p>
+                <p><strong>Latitude:</strong> {{ $lat ?? 'Not Available' }}</p>
+                <p><strong>Longitude:</strong> {{ $lng ?? 'Not Available' }}</p>
+                <p><strong>Emoji:</strong> {{ $emoji ?? 'Not Available' }}</p>
             </div>
         </div>
     </div>

@@ -14,4 +14,20 @@ class ProductController extends Controller
 
         return view('welcome', compact('apis'));
     }
+    public function showCountry($id){
+        $countryAPIUrl = "'http://127.0.0.1:8001/json/'.$id";
+        $response = Country::get($countryAPIUrl);
+        return view('welcome', [
+            'country' => $response->en,
+            'code' => $response->code,
+            'tw' => $response->tw,
+            'locale' => $response->locale,
+            'zh' => $response->zh,
+            'lat' => $response->lat,
+            'lng' => $response->lng,
+            'emoji' => $response->emoji,
+        ]);
+        
+
+    }
 }
