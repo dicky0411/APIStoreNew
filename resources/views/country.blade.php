@@ -53,6 +53,5 @@
         <button class="btn-back" onclick="window.location.href='{{ route('home') }}'">Back to Main UI</button>
     </div>
     </div>
-    
 </body>
 </html>

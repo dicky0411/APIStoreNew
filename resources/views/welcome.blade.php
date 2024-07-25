@@ -168,13 +168,10 @@
                     </form>
                     <div class="card-footer">
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-
                 </div>
                 </div>
             </div>
         </div>
-            
-           
         </div>
     </div>
 
@@ -264,12 +261,12 @@
         function redirectToJson1(event) {
             event.preventDefault();
             const countryCode = document.getElementById('country-code').value;
-            window.location.href = `http://127.0.0.1:8000/json/${countryCode}`;
+            window.location.href = `http://127.0.0.1:8000/${countryCode}`;
     }
         function redirectToJson2(event) {
             event.preventDefault();
             const regionCode = document.getElementById('region-code').value;
-            window.location.href = `http://127.0.0.1:8001/region/${regionCode}`;
+            window.location.href = `http://127.0.0.1:8001/${regionCode}`;
     }
         function redirectToJson3(event) {
             event.preventDefault();
