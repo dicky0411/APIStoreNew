@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('API');
-            $table->text('description');
+            $table->string('name')->comment('Product name');
+            $table->string('code')->unique()->comment('Product code');
+            $table->text('description')->comment('Product description');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('products');
     }
 };
