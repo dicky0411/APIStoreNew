@@ -42,7 +42,7 @@ class ProductController extends Controller
         }
     }
     public function showAreaCode($ac = null){
-        $areaUrl = "http://127.0.0.1:8002/areacode/$ac";
+        $areaUrl = "http://127.0.0.1:8002/$ac";
         $areacode = Http::get($areaUrl);
         $data = json_decode($areacode, true);
         if (is_null($data)) {

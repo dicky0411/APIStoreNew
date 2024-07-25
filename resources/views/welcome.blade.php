@@ -271,7 +271,7 @@
         function redirectToJson3(event) {
             event.preventDefault();
             const areaCode = document.getElementById('area-code').value;
-            window.location.href = `http://127.0.0.1:8002/areacode/${areaCode}`;
+            window.location.href = `http://127.0.0.1:8002/${areaCode}`;
     }
         function navigateTo(sectionId) {
             document.querySelectorAll('.container').forEach(container => {
