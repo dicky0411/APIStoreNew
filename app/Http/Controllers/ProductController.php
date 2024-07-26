@@ -28,8 +28,6 @@ class ProductController extends Controller
 
     public function showCountryJSON($id = null)
     {
-        // TODO: store url in database
-
         $countryAPIUrl = "http://127.0.0.1:8000/$id";
         $country       = Http::get($countryAPIUrl);
         $data          = json_decode($country, true);
