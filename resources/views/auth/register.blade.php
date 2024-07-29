@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container" id="register">
-        <button class="btn btn-secondary back-button" onclick="navigateBack()">Back</button>
         <h2>Register</h2>
         <form action="{{ route('register.submit') }}" method="post">
             @csrf
@@ -29,5 +28,6 @@
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
+        
     </div>
 @endsection

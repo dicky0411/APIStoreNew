@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container" id="login">
-        <button class="btn btn-secondary back-button" onclick="navigateBack()">Back</button>
         <h2>Login</h2>
         <form action="{{ route('login.submit') }}" method="post">
             @csrf

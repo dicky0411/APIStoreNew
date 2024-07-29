@@ -15,9 +15,6 @@ class createAPI extends Command
         $API = $this->argument('API');
         $Description = $this->argument('description');
 
-
-        
-
         // Create the user
         Product::create([
             'API' => $API."API",

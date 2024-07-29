@@ -80,6 +80,8 @@
 
 <body>
     @include('layout.navbar')
+    <br><br>
+    @yield('content')
     <div class="container">
         @if (session('success'))
             <div class="alert alert-success">
@@ -93,7 +95,7 @@
             </div>
         @endif
 
-        @yield('content')
+        
     </div>
     
 
