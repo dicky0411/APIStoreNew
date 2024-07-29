@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
@@ -28,7 +28,7 @@ class Ip2Region extends Component
             return;
         }
 
-        $result = $response->json();
+        $result       = $response->json();
         $this->region = $result['country'] ?? 'Unknown';
     }
 }

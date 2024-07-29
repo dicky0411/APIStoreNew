@@ -24,6 +24,3 @@ Route::get('/products/{code}', [ProductController::class, 'show'])->name('produc
 Route::get('/json/{id?}', [ProductController::class, 'showCountry'])->name('country.show');
 Route::get('/region/{code?}', [ProductController::class, 'showRegion'])->name('ip.show');
 Route::get('/areacode/{ac?}', [ProductController::class, 'showAreaCode'])->name('areacode.show');
-Route::get('/ip-region', function(){
-    return view('livewire.ip2region');
-})->name('ip.region.api');

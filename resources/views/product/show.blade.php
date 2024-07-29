@@ -4,9 +4,9 @@
     <h1>{{ $product->name }}</h1>
 
     @if (file_exists(resource_path('views/livewire/' . $product->code . '.blade.php')))
-        @livewire($product->code, ['product' => $product])
+        @livewire('ip2region')
     @else
-        @include('livewire.wild')
+        @livewire('wild')
     @endif
 
     <h2 style="margin-top: 10em">Recommended Products</h2>
