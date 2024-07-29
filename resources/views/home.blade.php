@@ -45,13 +45,13 @@
             <div class="row align-items-start">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://geology.com/world/world-map.gif" class="card-img-top" alt="World Map">
+                        <img src="https://collegeboreal.ca/wp-content/uploads/2023/03/pexels-leeloo-thefirst-5386754-scaled.jpg" class="card-img-top" alt="Calendars">
                         <div class="card-body">
-                            <h5 class="card-title">Country API</h5>
-                            <p class="card-text">Retrieve comprehensive data on countries worldwide,
-                                with an input of a country code, details like names, location, and other relevant
-                                information will be shown.</p>
-                                <a href="{{ route('products.show', ['code' => 'country']) }}"
+                            <h5 class="card-title">Calendar API</h5>
+                            <p class="card-text">Retrieve comprehensive data on holiday across united states, with the input of a 
+                                month and a date, the API will return the accurdate detail about the holiday on that date
+                            </p>
+                                <a href="{{ route('products.show', ['code' => 'calendar']) }}"
                                 class="btn btn-primary">Enter</a>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                                 entered,
                                 allowing you to identify the geographical regions in China corresponding to the area code.
                             </p>
-                            <a href="{{ route('products.show', ['code' => 'areacode']) }}"
+                            <a href="{{ route('products.show', ['code' => 'area-code']) }}"
                             class="btn btn-primary">Enter</a>
                         </div>
                     </div>
