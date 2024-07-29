@@ -7,8 +7,8 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Define GET routes to show forms
-Route::view('/register', 'register')->name('register.form');
-Route::view('/login', 'login')->name('login.form');
+Route::view('/register', 'auth.register')->name('register.form');
+Route::view('/login', 'auth.login')->name('login.form');
 
 // Define POST routes to handle form submissions
 Route::post('/register', [AuthController::class, 'register'])->name('register');
