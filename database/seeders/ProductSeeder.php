@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
             'code' => 'ip2region',
         ], [
             'name'        => 'ip2region',
-            'description' => 'ip2region',
+            'description' => 'ip2rgion',
         ]);
 
         Product::firstOrCreate([
