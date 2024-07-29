@@ -5,49 +5,61 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        // Validate the form data
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
 
-        if (Auth::attempt($credentials)) {
-            // Authentication passed, redirect with success message
-            return redirect()->intended('/')->with('success', 'Logged in successfully!');
+        // Attempt to log the user in
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // If successful, flash a success message to the session
+            $request->session()->flash('success', 'Login successful!');
+            return redirect()->intended(route('home'));
         }
 
-        // Authentication failed, redirect back with error message
-        return back()->withErrors(['email' => 'Invalid credentials']);
+        // If unsuccessful, flash an error message to the session
+        $request->session()->flash('error', 'These credentials do not match our records.');
+        return redirect()->back()->withInput($request->only('email'));
     }
 
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/');
-    }
     // Add registration method if needed
     public function register(Request $request)
-{
-    // Validation rules
-    $request->validate([
-        'email' => 'required|email|unique:users,email',
-        'password' => 'required|min:6|confirmed',
-    ]);
+    {
+        // Validate the form data
+        $request->validate([
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+        ]);
 
-    // Create new user
-    $user = User::create([
-        'email' => $request->email,
-        'password' => bcrypt($request->password), // Hash the password for security
-    ]);
+        // Create a new user
+        $user = User::create([
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-    // Automatically log in the newly registered user
-    Auth::login($user);
+        // Log the user in
+        Auth::login($user);
 
-    // Redirect to a new page or intended page
-    return redirect()->intended('/');
-}
+        // Flash a success message to the session
+        $request->session()->flash('success', 'Registration successful!');
+        return redirect()->route('home');
+    }
+    public function logout(Request $request)
+    {
+        // Log the user out
+        Auth::logout();
+
+        // Flash a success message to the session
+        $request->session()->flash('success', 'Logged out successfully!');
+
+        // Redirect to the home page
+        return redirect()->route('home');
+    }
 }

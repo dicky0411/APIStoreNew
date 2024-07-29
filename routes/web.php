@@ -6,17 +6,17 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-// Define GET routes to show forms
-Route::view('/register', 'auth.register')->name('register.form');
-Route::view('/login', 'auth.login')->name('login.form');
+// Post routes for form submissions
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 
-// Define POST routes to handle form submissions
-Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+// View routes for displaying register and login pages
+Route::view('/register', 'auth.register')->name('register');
+Route::view('/login', 'auth.login')->name('login');
+
+// Other routes...
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/submit_form', [UserController::class, 'store'])->name('user.store');
-
-// Define other routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{code}', [ProductController::class, 'show'])->name('products.show');

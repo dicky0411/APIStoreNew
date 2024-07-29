@@ -80,11 +80,33 @@
 
 <body>
     @include('layout.navbar')
-    <div class="container" style="margin-top: 5em">
+    <div class="container">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
         @yield('content')
     </div>
+    
 
     @include('layout.footer')
+    <script>
+        $(document).ready(function() {
+            // Automatically hide alerts after 5 seconds
+            setTimeout(function() {
+                $('.alert').fadeOut('slow');
+            }, 5000);
+        });
+    </script>
+    
 </body>
 
 </html>
