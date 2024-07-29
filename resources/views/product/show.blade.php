@@ -1,10 +1,10 @@
 @extends('layout.app')
 
 @section('content')
-    <h1>{{ $product->name }}</h1>
+    <h1>{{ $code }}</h1>
 
-    @if (file_exists(resource_path('views/livewire/' . $product->code . '.blade.php')))
-        @livewire('ip2region')
+    @if (file_exists(resource_path('views/livewire/' . $code . '.blade.php')))
+        @livewire($code)
     @else
         @livewire('wild')
     @endif

@@ -20,10 +20,13 @@ class ProductController extends Controller
     public function show($code)
     {
         // TODO: validation: what if $code is too short or too long
+        // $product = Product::where('code', $code)->firstOrFail();
 
-        $product = Product::where('code', $code)->firstOrFail();
+        if (in_array($code, ['ip2region', 'country'])) {
+            return view("product.show", compact('code'));
+        }
 
-        return view("product.show", compact('product'));
+        return abort(404);
     }
 
     public function showCountryJSON($id = null)
