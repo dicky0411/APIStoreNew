@@ -28,10 +28,10 @@
                 </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="navigateTo('register')">Register</a>
+                    <a class="nav-link" href="{{ route('register.form') }}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="navigateTo('login')">Login</a>
+                    <a class="nav-link" href="{{ route('login.form') }}">Login</a>
                 </li>
             @endauth
         </ul>

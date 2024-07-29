@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <h5>About Us</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada
-                    feugiat.</p>
+                <p>We are a company that produces useful APIs that are free of use, currently we offer country, area code and region IP API of service</p>
             </div>
             <div class="col-md-4">
                 <h5>Links</h5>
