@@ -8,14 +8,15 @@
         <form id="calendarForm" class="mt-4" wire:submit.prevent="search">
             <div class="form-group">
                 <label for="calendarMonth">Please Type the Month (请输入月):</label>
-                <label for="calendarDay">Please Type the Day (请输入日):</label>
+                
                 <input type="text" class="form-control" wire:model.defer="month" id="calendarMonth" placeholder="例如: 12" required>
+                <label for="calendarDay">Please Type the Day (请输入日):</label>
                 <input type="text" class="form-control" wire:model.defer="day" id="calendarDay" placeholder="例如: 25" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">查询</button>
         </form>
         <div id="result" class="mt-4">
-            @if ($region)
+            @if ($holidayName)
                 <div class="alert alert-success">
                     On {{$month}}/{{$day}}  <br>
                     The Holiday is: {{ $holidayName }}
