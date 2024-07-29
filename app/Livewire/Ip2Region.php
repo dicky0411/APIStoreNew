@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Http\Livewire;
 
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
@@ -14,12 +14,12 @@ class Ip2Region extends Component
 
     public function render()
     {
-        return view('livewire.ip2region');
+        return view('livewire.ip2region'); // The view file for this component
     }
 
     public function search()
     {
-        $url = "http://ip-api.com/json/?lang=zh-CN";
+        $url = "http://ip-api.com/json/{$this->ip}?lang=zh-CN"; // Ensure the URL uses the IP
 
         $response = Http::get($url);
 
@@ -28,8 +28,7 @@ class Ip2Region extends Component
             return;
         }
 
-        $result       = $response->json();
-        $region       = $result['country'];
-        $this->region = $region;
+        $result = $response->json();
+        $this->region = $result['country'] ?? 'Unknown';
     }
 }

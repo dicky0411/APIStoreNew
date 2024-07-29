@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Ip2Region;
 
 // Post routes for form submissions
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
@@ -23,3 +24,6 @@ Route::get('/products/{code}', [ProductController::class, 'show'])->name('produc
 Route::get('/json/{id?}', [ProductController::class, 'showCountry'])->name('country.show');
 Route::get('/region/{code?}', [ProductController::class, 'showRegion'])->name('ip.show');
 Route::get('/areacode/{ac?}', [ProductController::class, 'showAreaCode'])->name('areacode.show');
+Route::get('/ip-region', function(){
+    return view('livewire.ip2region');
+})->name('ip.region.api');

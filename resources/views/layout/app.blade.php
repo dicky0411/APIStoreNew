@@ -82,6 +82,7 @@
     @include('layout.navbar')
     <br><br>
     @yield('content')
+    @livewireScripts
     <div class="container">
         @if (session('success'))
             <div class="alert alert-success">
@@ -94,7 +95,7 @@
                 {{ session('error') }}
             </div>
         @endif
-
+        
         
     </div>
     
