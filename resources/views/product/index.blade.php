@@ -9,7 +9,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Country API</h5>
                         <p class="card-text">Retrieve comprehensive data on countries worldwide, with an input of a country code, details like names, location, and other relevant information will be shown.</p>
-                        <a href="#" class="btn btn-primary">Enter</a>
+                        <a href="{{ route('products.show', ['code' => 'country']) }}"
+                                class="btn btn-primary">Enter</a>
                     </div>
                 </div>
             </div>
@@ -19,7 +20,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Regional IP API</h5>
                         <p class="card-text">Access detailed information about IP addresses, including geolocation data, and the absolute location of the location with the input of a valid IP address.</p>
-                        <a href="#" class="btn btn-primary">Enter</a>
+                        <a href="{{ route('products.show', ['code' => 'ip2region']) }}"
+                                class="btn btn-primary">Enter</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +31,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Area Code API</h5>
                         <p class="card-text">Get accurate and up-to-date data on area codes after a 6 digit area code is entered, allowing you to identify the geographical regions in China corresponding to the area code.</p>
-                        <a href="#" class="btn btn-primary">Enter</a>
+                        <a href="{{ route('products.show', ['code' => 'areacode']) }}"
+                            class="btn btn-primary">Enter</a>
                     </div>
                 </div>
             </div>

@@ -51,7 +51,8 @@
                             <p class="card-text">Retrieve comprehensive data on countries worldwide,
                                 with an input of a country code, details like names, location, and other relevant
                                 information will be shown.</p>
-                            <a href="#" class="btn btn-primary">Enter</a>
+                                <a href="{{ route('products.show', ['code' => 'country']) }}"
+                                class="btn btn-primary">Enter</a>
                         </div>
                     </div>
                 </div>
@@ -78,7 +79,8 @@
                                 entered,
                                 allowing you to identify the geographical regions in China corresponding to the area code.
                             </p>
-                            <a href="#" class="btn btn-primary">Enter</a>
+                            <a href="{{ route('products.show', ['code' => 'areacode']) }}"
+                            class="btn btn-primary">Enter</a>
                         </div>
                     </div>
                 </div>
