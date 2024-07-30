@@ -95,6 +95,32 @@
                     </div>
                 </div>
             </div>
+            <div class="col">
+            <br><br><br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/dictionary.jpeg" class="card-img-top" alt="shhhh">
+                    <div class="card-body">
+                        <h5 class="card-title">Dictionary API</h5>
+                        <ter class="card-text">This API returns the definition of a word and uses it in an example sentence after being entered, works for the english language</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'dictionary']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+            <br><br><br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/dictionary.jpeg" class="card-img-top" alt="shhhh">
+                    <div class="card-body">
+                        <h5 class="card-title">Dictionary API</h5>
+                        <ter class="card-text">This API returns the definition of a word and uses it in an example sentence after being entered, works for the english language</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'dictionary']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
         </div>
      </div>
    
