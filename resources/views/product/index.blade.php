@@ -33,7 +33,23 @@
                     <div class="card-body">
                         <h5 class="card-title">Cryptocurrency API</h5>
                         <p class="card-text">Get accurate and up-to-date data on any type of cryptocurrency and can be converted to most currencies.</p>
+                        <br><br>
+                    
                         <a href="{{ route('products.show', ['code' => 'crypto']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+            <br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/currentIP.jpeg" class="card-img-top" alt="currentIP">
+                    <div class="card-body">
+                        <h5 class="card-title">Current IP Address API</h5>
+                        <p class="card-text">This is a simple API that returns your current IP Address</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'currentIP']) }}"
                             class="btn btn-primary">Enter</a>
                     </div>
                 </div>
