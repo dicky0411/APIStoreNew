@@ -18,7 +18,7 @@ class CurEx extends Component
     public function search()
     {
         $url = "https://v6.exchangerate-api.com/v6/210205ff24666156ebc8515a/latest/".$this->currency;
-        dd($url);
+        
         $response = Http::get($url);
         if ($response->failed()){
             $this->errorMessage = "请求失败/Check inputs again";
