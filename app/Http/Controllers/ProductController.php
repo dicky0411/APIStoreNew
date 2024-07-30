@@ -29,7 +29,8 @@ class ProductController extends Controller
                             'Cur-Ex',
                             'zip-code',
                             'profanity-eraser',
-                            'dictionary'
+                            'dictionary',
+                            'gender'
                     ])) {
             return view("product.show", compact('code'));
         }

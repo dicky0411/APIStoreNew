@@ -17,6 +17,7 @@ class Dictionary extends Component
         return view('livewire.dictionary');
     }
     public function search(){
+        $this->definition = null; 
         $url = "https://api.dictionaryapi.dev/api/v2/entries/en/".$this->word;
         $response = Http::get($url);
         if ($response->failed()) {
@@ -36,6 +37,7 @@ class Dictionary extends Component
 
                 $this->definition[]=$defintionsInLoop[$i]['definition'];
             }
+            
         }   
        
 

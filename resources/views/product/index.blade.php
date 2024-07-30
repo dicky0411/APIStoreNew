@@ -98,12 +98,12 @@
             <div class="col">
             <br><br><br><br>
                 <div class="card" style="width: 18rem;">
-                    <img src="images/dictionary.jpeg" class="card-img-top" alt="shhhh">
+                    <img src="images/gender.jpeg" class="card-img-top" alt="gender">
                     <div class="card-body">
-                        <h5 class="card-title">Dictionary API</h5>
-                        <ter class="card-text">This API returns the definition of a word and uses it in an example sentence after being entered, works for the english language</p>
+                        <h5 class="card-title">Gender Probability API</h5>
+                        <ter class="card-text">This API takes a first name or a full name and calculates the Probability of the name being that gender</p>
                         
-                        <a href="{{ route('products.show', ['code' => 'dictionary']) }}"
+                        <a href="{{ route('products.show', ['code' => 'gender']) }}"
                             class="btn btn-primary">Enter</a>
                     </div>
                 </div>
@@ -111,10 +111,10 @@
             <div class="col">
             <br><br><br><br>
                 <div class="card" style="width: 18rem;">
-                    <img src="images/dictionary.jpeg" class="card-img-top" alt="shhhh">
+                    <img src="images/dictionary.jpeg" class="card-img-top" alt="dict">
                     <div class="card-body">
                         <h5 class="card-title">Dictionary API</h5>
-                        <ter class="card-text">This API returns the definition of a word and uses it in an example sentence after being entered, works for the english language</p>
+                        <ter class="card-text">This API returns every definition of a word listed from 1 to n, works for every english word</p>
                         
                         <a href="{{ route('products.show', ['code' => 'dictionary']) }}"
                             class="btn btn-primary">Enter</a>
