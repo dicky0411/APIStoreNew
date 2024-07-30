@@ -21,12 +21,12 @@
         <div id="result" class="mt-4">
             @if ($currencyPrice)
                 <div class="alert alert-success">
-                    {{$symbol}} in {{$currency}} is {{$currencyPrice}}
+                    {{$symbol}} in {{$currency}} is {{$currencyPrice}} units
                 </div>
                 
             @endif
 
-            @if($errorMessage || $currencyPrice ==0)
+            @if($errorMessage)
                 <div class="alert alert-danger">
                     {{$errorMessage}}
                 </div>

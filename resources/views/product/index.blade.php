@@ -54,6 +54,32 @@
                     </div>
                 </div>
             </div>
+            <div class="col">
+            <br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/currencyexchange.jpeg" class="card-img-top" alt="curex">
+                    <div class="card-body">
+                        <h5 class="card-title">Currency Exchange API</h5>
+                        <p class="card-text">This API converts any number of any currency to its equivalent in USD, it'll ask you for the currency type and the amount and it'll calculate for you</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'Currency-Ex']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+            <br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/currencyexchange.jpeg" class="card-img-top" alt="curex">
+                    <div class="card-body">
+                        <h5 class="card-title">Currency Exchange API</h5>
+                        <p class="card-text">This API converts any number of any currency to its equivalent in USD, it'll ask you for the currency type and the amount and it'll calculate for you</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'CurrencyEx']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
