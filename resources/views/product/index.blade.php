@@ -4,18 +4,17 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/calendar1.webp" class="card-img-top" alt="Calendar API">
-                        <div class="card-body">
-                            <h5 class="card-title">Calendar API</h5>
-                            <p class="card-text">Retrieve comprehensive data on holiday across united states, with the input of a 
+                <div class="card" style="width: 18rem;">
+                    <img src="images/calendar1.webp" class="card-img-top" alt="Calendar API">
+                    <div class="card-body">
+                        <h5 class="card-title">Calendar API</h5>
+                        <p class="card-text">Retrieve comprehensive data on holiday across united states, with the input of a 
                                 month and a date, the API will return the accurdate detail about the holiday on that date
-                            </p>
-                                <a href="{{ route('products.show', ['code' => 'calendar']) }}"
-                                class="btn btn-primary">Enter</a>
-                        </div>
+                        </p>
+                        <a href="{{ route('products.show', ['code' => 'calendar']) }}"class="btn btn-primary">Enter</a>
                     </div>
                 </div>
+            </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img src="images/ipRegion.jpg" class="card-img-top" alt="IP Geolocation">
@@ -40,7 +39,8 @@
                     </div>
                 </div>
             </div>
-            
+        </div>
+        <div class="row">
             <div class="col">
             <br><br>
                 <div class="card" style="width: 18rem;">
@@ -81,5 +81,21 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col">
+            <br><br><br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/shhhh.jpg" class="card-img-top" alt="shhhh">
+                    <div class="card-body">
+                        <h5 class="card-title">Profanity Eraser API</h5>
+                        <ter class="card-text">This API is a simple, it has the ability to filter out profanities in a large chunk of text, it returns each profanity in ****, it'll produce a safe environment</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'profanity-eraser']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+   
 @endsection
