@@ -31,10 +31,7 @@
                         APIs.
                         Our platform offers seamless integration and easy access to various data sources,
                         empowering developers and businesses to build robust applications with real-time information.</p>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>

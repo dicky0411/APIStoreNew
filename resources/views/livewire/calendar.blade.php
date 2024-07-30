@@ -10,6 +10,7 @@
                 <label for="calendarMonth">Please Type the Month (请输入月):</label>
                 
                 <input type="text" class="form-control" wire:model.defer="month" id="calendarMonth" placeholder="例如: 12" required>
+                <br>
                 <label for="calendarDay">Please Type the Day (请输入日):</label>
                 <input type="text" class="form-control" wire:model.defer="day" id="calendarDay" placeholder="例如: 25" required>
             </div>

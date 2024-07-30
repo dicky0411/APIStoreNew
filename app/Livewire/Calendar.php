@@ -21,6 +21,7 @@ class Calendar extends Component
 
     public function search()
     {
+        
         $url = "https://holidays.abstractapi.com/v1/?api_key=0bca8f93ee204c0ca8af40c092580318&country=US&year=2020&month=".$this->month."&day=".$this->day;
         $response = Http::get($url);
 
@@ -28,9 +29,10 @@ class Calendar extends Component
             $this->errorMessage = "请求失败/Check inputs again";
             return;
         }
+       
         
         $result= $response->json();
-       
-        $this->holidayName = $result['name'] ?? 'Unknown';
+        
+        $this->holidayName = $result[0]['name'] ?? 'Unknown';
     }
 }
