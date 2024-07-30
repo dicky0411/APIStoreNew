@@ -21,9 +21,8 @@
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6">
-                    <img src="https://sinay.ai/wp-content/uploads/2022/09/api-e1649279794668-scaled.webp"
-                        class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500"
-                        loading="lazy">
+                    <img src="images/apistore.webp" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+                        height="500" loading="lazy">
                 </div>
                 <div class="col-lg-6">
                     <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">API Store</h1>
@@ -42,7 +41,7 @@
             <div class="row align-items-start">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/products/calendar.jpg" class="card-img-top" alt="Calendars">
+                        <img src="images/calendar1.webp" class="card-img-top" alt="Calendars">
                         <div class="card-body">
                             <h5 class="card-title">Calendar API</h5>
                             <p class="card-text">Retrieve comprehensive data on holiday across united states, with the input
@@ -55,7 +54,7 @@
                 </div>
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/products/ip2region.jpg" class="card-img-top" alt="Regional IP API">
+                        <img src="images/ipRegion.jpg" class="card-img-top" alt="Regional IP API">
                         <div class="card-body">
                             <h5 class="card-title">Regional IP API</h5>
                             <p class="card-text">Access detailed information about IP addresses, including geolocation data,
@@ -67,7 +66,7 @@
                 </div>
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/products/crypto.png" class="card-img-top" alt="...">
+                        <img src="images/crypto1.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Cryptocurrency API</h5>
                             <p class="card-text">Get accurate and up-to-date data on any type of cryptocurrency and can be

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://collegeboreal.ca/wp-content/uploads/2023/03/pexels-leeloo-thefirst-5386754-scaled.jpg" class="card-img-top" alt="World Map">
+                        <img src="images/calendar1.webp" class="card-img-top" alt="Calendar API">
                         <div class="card-body">
                             <h5 class="card-title">Calendar API</h5>
                             <p class="card-text">Retrieve comprehensive data on holiday across united states, with the input of a 
@@ -18,7 +18,7 @@
                 </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="https://miro.medium.com/v2/resize:fit:960/1*UTw_shVIFnBkuS5ngndXvw.jpeg" class="card-img-top" alt="IP Geolocation">
+                    <img src="images/ipRegion.jpg" class="card-img-top" alt="IP Geolocation">
                     <div class="card-body">
                         <h5 class="card-title">Regional IP API</h5>
                         <p class="card-text">Access detailed information about IP addresses, including geolocation data, and the absolute location of the location with the input of a valid IP address.</p>
@@ -29,11 +29,53 @@
             </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/4087184/cover_image/retina_500x200/Untitled-4e06fb2b6d487f6550add2b1a007847b.png" class="card-img-top" alt="Area Codes">
+                    <img src="images/crypto1.png" class="card-img-top" alt="Crypto">
                     <div class="card-body">
                         <h5 class="card-title">Cryptocurrency API</h5>
                         <p class="card-text">Get accurate and up-to-date data on any type of cryptocurrency and can be converted to most currencies.</p>
+                        <br><br>
+                    
                         <a href="{{ route('products.show', ['code' => 'crypto']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+            <br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/currentIP.jpeg" class="card-img-top" alt="currentIP">
+                    <div class="card-body">
+                        <h5 class="card-title">Current IP Address API</h5>
+                        <p class="card-text">This is a simple API that returns your current IP Address</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'currentIP']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+            <br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/currencyexchange.jpeg" class="card-img-top" alt="curex">
+                    <div class="card-body">
+                        <h5 class="card-title">Currency Exchange API</h5>
+                        <p class="card-text">This API converts any number of any currency to its equivalent in USD, it'll ask you for the currency type and the amount and it'll calculate for you</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'Cur-Ex']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+            <br><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/currencyexchange.jpeg" class="card-img-top" alt="curex">
+                    <div class="card-body">
+                        <h5 class="card-title">Currency Exchange API</h5>
+                        <p class="card-text">This API converts any number of any currency to its equivalent in USD, it'll ask you for the currency type and the amount and it'll calculate for you</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'Cur-Ex']) }}"
                             class="btn btn-primary">Enter</a>
                     </div>
                 </div>

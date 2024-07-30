@@ -8,7 +8,7 @@ class Crypto extends Component
 {
     public $currency = "USD";
     public $symbol = "BTC";
-    public $currencyPrice = "";
+    public $currencyPrice;
     public $errorMessage = "";
     public function render()
     {
