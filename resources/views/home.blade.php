@@ -68,15 +68,13 @@
                 </div>
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Map_of_the_telephone_area_codes_of_the_People%27s_Republic_of_China.png/450px-Map_of_the_telephone_area_codes_of_the_People%27s_Republic_of_China.png"
+                        <img src="https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/4087184/cover_image/retina_500x200/Untitled-4e06fb2b6d487f6550add2b1a007847b.png"
                             class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Area Code API</h5>
-                            <p class="card-text">Get accurate and up-to-date data on area codes after a 6 digit area code is
-                                entered,
-                                allowing you to identify the geographical regions in China corresponding to the area code.
+                            <h5 class="card-title">Cryptocurrency API</h5>
+                            <p class="card-text">Get accurate and up-to-date data on any type of cryptocurrency and can be converted to most currencies.
                             </p>
-                            <a href="{{ route('products.show', ['code' => 'area-code']) }}"
+                            <a href="{{ route('products.show', ['code' => 'crypto']) }}"
                             class="btn btn-primary">Enter</a>
                         </div>
                     </div>

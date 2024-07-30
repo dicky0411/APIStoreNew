@@ -22,7 +22,7 @@ class ProductController extends Controller
         // TODO: validation: what if $code is too short or too long
         // $product = Product::where('code', $code)->firstOrFail();
 
-        if (in_array($code, ['ip2region', 'calendar','areacode'])) {
+        if (in_array($code, ['ip2region', 'calendar','crypto'])) {
             return view("product.show", compact('code'));
         }
 
