@@ -84,6 +84,13 @@ class ProductController extends Controller
                 'description' => 'This API outputs the total cases at a specific date in a specific state in the United States in 2020, showcasing how fast COVID spreads.',
                 'code' => 'covid'
             ],
+            [
+                'image' => 'language.jpeg',
+                'title' => 'Language Detector API',
+                'description' => 'This API detects the input language type and returns a confidence factor on how much it thinks that its correct',
+                'code' => 'languagedetector'
+            ],
+
         ];
     
         return view('product.index', compact('products'));
@@ -106,7 +113,8 @@ class ProductController extends Controller
                             'gender',
                             'fruits',
                             'advanced-ip',
-                            'covid'
+                            'covid',
+                            'languagedetector'
                     ])) {
             return view("product.show", compact('code'));
         }
