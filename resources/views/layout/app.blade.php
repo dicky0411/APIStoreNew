@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            background-color: #ADE8E6;
+            background-color: #000000;
             /* Light background color */
             color: #000000;
             /* Dark text color */
@@ -17,6 +17,10 @@
 
         .container {
             margin-top: 20px;
+            background-color:#EDDB7E;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
         }
 
         .alert {
