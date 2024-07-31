@@ -96,6 +96,19 @@ class ProductController extends Controller
                 'description' => 'This API takes an unique URL and condenses to a brand new URL from users input',
                 'code' => 'urlshortener'
             ],
+            [
+                'image' => 'airquality.jpeg',
+                'title' => 'Air Quality API',
+                'description' => 'This API takes in a city\'s name and return the air quality index of the day',
+                'code' => 'air-quality'
+            ],
+            [
+                'image' => 'weather.jpeg',
+                'title' => 'Pollutants API',
+                'description' => 'This API takes in a city\'s name and returns all the information on the amount of pollutants in the sky on the day of',
+                'code' => 'air-pollutants'
+            ],
+
 
         ];
     
@@ -121,7 +134,9 @@ class ProductController extends Controller
                             'advanced-ip',
                             'covid',
                             'languagedetector',
-                            'urlshortener'
+                            'urlshortener',
+                            'air-quality',
+                            'air-pollutants'
                     ])) {
             return view("product.show", compact('code'));
         }
