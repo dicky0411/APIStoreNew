@@ -6,7 +6,7 @@
 
         <form id="cryptoForm" class="mt-4" wire:submit.prevent="search">
             <div class ="form-group">
-                <label for="currency">Choose a currency:</label>
+                <label for="currency">Choose a acurrency:</label>
                 <select name="currency" id="currency" wire:model.defer="currency">
                     <option value = "USD">USD/美元</option>
                     <option value = "EUR">EURO/欧币</option>
