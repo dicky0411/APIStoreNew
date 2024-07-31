@@ -42,7 +42,7 @@
         </div>
         <div class="row">
             <div class="col">
-            <br><br>
+            
                 <div class="card" style="width: 18rem;">
                     <img src="images/currentIP.jpeg" class="card-img-top" alt="currentIP">
                     <div class="card-body">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="col">
-            <br><br>
+            
                 <div class="card" style="width: 18rem;">
                     <img src="images/currencyexchange.jpeg" class="card-img-top" alt="curex">
                     <div class="card-body">
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="col">
-            <br><br>
+            
                 <div class="card" style="width: 18rem;">
                     <img src="images/zipcode.jpeg" class="card-img-top" alt="zip">
                     <div class="card-body">
@@ -83,7 +83,7 @@
         </div>
         <div class="row">
             <div class="col">
-            <br><br><br><br>
+            
                 <div class="card" style="width: 18rem;">
                     <img src="images/shhhh.jpg" class="card-img-top" alt="shhhh">
                     <div class="card-body">
@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div class="col">
-            <br><br><br><br>
+           
                 <div class="card" style="width: 18rem;">
                     <img src="images/gender.jpeg" class="card-img-top" alt="gender">
                     <div class="card-body">
@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="col">
-            <br><br><br><br>
+            
                 <div class="card" style="width: 18rem;">
                     <img src="images/dictionary.jpeg" class="card-img-top" alt="dict">
                     <div class="card-body">
@@ -117,6 +117,47 @@
                         <ter class="card-text">This API returns every definition of a word listed from 1 to n, works for every english word</p>
                         
                         <a href="{{ route('products.show', ['code' => 'dictionary']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            
+                <div class="card" style="width: 18rem;">
+                    <img src="images/fruits.jpeg" class="card-img-top" alt="shhhh">
+                    <div class="card-body">
+                        <h5 class="card-title">Fruit Nutrition API</h5>
+                        <ter class="card-text">This API outputs all the macro and micro nutrition data of all fruits, from domestic to tropical fruits, data displayed includes calories, proteins and more</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'fruits']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+            
+                <div class="card" style="width: 18rem;">
+                    <img src="images/advancedIP.jpeg" class="card-img-top" alt="Advanced IP">
+                    <div class="card-body">
+                        <h5 class="card-title">Advanced IP API</h5>
+                        <ter class="card-text">This API outputs the Longitude and Latitude of the IP entered, and also replies with the area code for the user's convenience</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'advanced-ip']) }}"
+                            class="btn btn-primary">Enter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+            
+                <div class="card" style="width: 18rem;">
+                    <img src="images/covid.jpeg" class="card-img-top" alt="covid">
+                    <div class="card-body">
+                        <h5 class="card-title">COVID Cases API</h5>
+                        <ter class="card-text">This API outputs the total cases at xxxx date at xxx state in the United States in 2020, it showcases how fast covid spreads</p>
+                        
+                        <a href="{{ route('products.show', ['code' => 'covid']) }}"
                             class="btn btn-primary">Enter</a>
                     </div>
                 </div>

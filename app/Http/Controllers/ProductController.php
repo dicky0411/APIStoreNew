@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 
 class ProductController extends Controller
 {
+    
     public function index()
     {
         $products = Product::all();
@@ -21,7 +22,7 @@ class ProductController extends Controller
     {
         // TODO: validation: what if $code is too short or too long
         // $product = Product::where('code', $code)->firstOrFail();
-
+        
         if (in_array($code, ['currentIP',
                             'ip2region', 
                             'calendar',
@@ -30,7 +31,10 @@ class ProductController extends Controller
                             'zip-code',
                             'profanity-eraser',
                             'dictionary',
-                            'gender'
+                            'gender',
+                            'fruits',
+                            'advanced-ip',
+                            'covid'
                     ])) {
             return view("product.show", compact('code'));
         }
