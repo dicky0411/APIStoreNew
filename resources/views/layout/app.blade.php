@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <title>API Store</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            background-color: #ADD8E6;
+            background-color: #000000;
             /* Light background color */
             color: #000000;
             /* Dark text color */
@@ -16,6 +17,10 @@
 
         .container {
             margin-top: 20px;
+            background-color:#27E9FE;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
         }
 
         .alert {

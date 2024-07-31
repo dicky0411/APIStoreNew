@@ -1,127 +1,105 @@
 @extends('layout.app')
 
 @section('content')
+    <style>
+        /* General Container Styles */
+        .container {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a); /* Dark gradient for depth */
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px); /* Holographic effect */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+        }
+
+        /* Card Styles */
+        .card {
+            border: 2px solid #333;
+            border-radius: 16px;
+            background: rgba(34, 34, 34, 0.8); /* Semi-transparent dark background */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* Neon shadow */
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 255, 255, 0.1); /* Neon overlay */
+            mix-blend-mode: screen;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 0.3;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .card-img-top {
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            filter: brightness(0.7); /* Darker image effect */
+        }
+
+        /* Button Styles */
+        .btn-custom {
+            background: linear-gradient(90deg, #00aaff, #00ffff); /* Neon gradient */
+            border: none;
+            color: #fff;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Neon glow */
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(90deg, #00ffff, #00aaff); /* Inverted gradient */
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.9); /* Enhanced glow */
+        }
+
+        /* Title and Text Styles */
+        .card-title {
+            color: #00eaff; /* Bright cyan */
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            color: #b0b0b0; /* Light gray */
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+    </style>
     <div class="container mt-5">
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/calendar1.webp" class="card-img-top" alt="Calendar API">
-                    <div class="card-body">
-                        <h5 class="card-title">Calendar API</h5>
-                        <p class="card-text">Retrieve comprehensive data on holiday across united states, with the input of a 
-                                month and a date, the API will return the accurdate detail about the holiday on that date
-                        </p>
-                        <a href="{{ route('products.show', ['code' => 'calendar']) }}"class="btn btn-primary">Enter</a>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach ($products as $product)
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/{{ $product['image'] }}" class="card-img-top" alt="{{ $product['title'] }}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $product['title'] }}</h5>
+                            <p class="card-text flex-grow-1">{{ $product['description'] }}</p>
+                            <a href="{{ route('products.show', ['code' => $product['code']]) }}" class="btn btn-custom mt-auto">Enter</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/ipRegion.jpg" class="card-img-top" alt="IP Geolocation">
-                    <div class="card-body">
-                        <h5 class="card-title">Regional IP API</h5>
-                        <p class="card-text">Access detailed information about IP addresses, including geolocation data, and the absolute location of the location with the input of a valid IP address.</p>
-                        <a href="{{ route('products.show', ['code' => 'ip2region']) }}"
-                                class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/crypto1.png" class="card-img-top" alt="Crypto">
-                    <div class="card-body">
-                        <h5 class="card-title">Cryptocurrency API</h5>
-                        <p class="card-text">Get accurate and up-to-date data on any type of cryptocurrency and can be converted to most currencies.</p>
-                        <br><br>
-                    
-                        <a href="{{ route('products.show', ['code' => 'crypto']) }}"
-                            class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-        <div class="row">
-            <div class="col">
-            <br><br>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/currentIP.jpeg" class="card-img-top" alt="currentIP">
-                    <div class="card-body">
-                        <h5 class="card-title">Current IP Address API</h5>
-                        <p class="card-text">This is a simple API that returns your current IP Address</p>
-                        
-                        <a href="{{ route('products.show', ['code' => 'currentIP']) }}"
-                            class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-            <br><br>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/currencyexchange.jpeg" class="card-img-top" alt="curex">
-                    <div class="card-body">
-                        <h5 class="card-title">Currency Exchange API</h5>
-                        <p class="card-text">This API converts any number of any currency to its equivalent in USD, it'll ask you for the currency type and the amount and it'll calculate for you</p>
-                        
-                        <a href="{{ route('products.show', ['code' => 'Cur-Ex']) }}"
-                            class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-            <br><br>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/zipcode.jpeg" class="card-img-top" alt="zip">
-                    <div class="card-body">
-                        <h5 class="card-title">Zip Code API</h5>
-                        <p class="card-text">This API takes an 5 digit input as the zip code for united states, and it'll return the location of the zip code, including the local and the state that its in</p>
-                        
-                        <a href="{{ route('products.show', ['code' => 'zip-code']) }}"
-                            class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-            <br><br><br><br>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/shhhh.jpg" class="card-img-top" alt="shhhh">
-                    <div class="card-body">
-                        <h5 class="card-title">Profanity Eraser API</h5>
-                        <ter class="card-text">This API is a simple, it has the ability to filter out profanities in a large chunk of text, it returns each profanity in ****, it'll produce a safe environment</p>
-                        
-                        <a href="{{ route('products.show', ['code' => 'profanity-eraser']) }}"
-                            class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-            <br><br><br><br>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/gender.jpeg" class="card-img-top" alt="gender">
-                    <div class="card-body">
-                        <h5 class="card-title">Gender Probability API</h5>
-                        <ter class="card-text">This API takes a first name or a full name and calculates the Probability of the name being that gender</p>
-                        
-                        <a href="{{ route('products.show', ['code' => 'gender']) }}"
-                            class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-            <br><br><br><br>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/dictionary.jpeg" class="card-img-top" alt="dict">
-                    <div class="card-body">
-                        <h5 class="card-title">Dictionary API</h5>
-                        <ter class="card-text">This API returns every definition of a word listed from 1 to n, works for every english word</p>
-                        
-                        <a href="{{ route('products.show', ['code' => 'dictionary']) }}"
-                            class="btn btn-primary">Enter</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </div>
-   
+    </div>
 @endsection
