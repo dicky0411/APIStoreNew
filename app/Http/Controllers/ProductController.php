@@ -90,6 +90,12 @@ class ProductController extends Controller
                 'description' => 'This API detects the input language type and returns a confidence factor on how much it thinks that its correct',
                 'code' => 'languagedetector'
             ],
+            [
+                'image' => 'condenser.jpg',
+                'title' => 'URL Condenser API',
+                'description' => 'This API takes an unique URL and condenses to a brand new URL from users input',
+                'code' => 'urlshortener'
+            ],
 
         ];
     
@@ -114,7 +120,8 @@ class ProductController extends Controller
                             'fruits',
                             'advanced-ip',
                             'covid',
-                            'languagedetector'
+                            'languagedetector',
+                            'urlshortener'
                     ])) {
             return view("product.show", compact('code'));
         }
