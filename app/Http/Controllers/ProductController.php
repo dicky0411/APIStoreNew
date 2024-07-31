@@ -108,6 +108,18 @@ class ProductController extends Controller
                 'description' => 'This API takes in a city\'s name and returns all the information on the amount of pollutants in the sky on the day of',
                 'code' => 'air-pollutants'
             ],
+            [
+                'image' => 'currencyEx.jpeg',
+                'title' => 'Currency API',
+                'description' => 'This API returns the type of currency after the country is entered',
+                'code' => 'currency'
+            ],
+            [
+                'image' => 'country.jpeg',
+                'title' => 'Country API',
+                'description' => 'This API returns the meta data about the country of choice when entered by users',
+                'code' => 'country'
+            ],
 
 
         ];
@@ -136,7 +148,9 @@ class ProductController extends Controller
                             'languagedetector',
                             'urlshortener',
                             'air-quality',
-                            'air-pollutants'
+                            'air-pollutants',
+                            'currency',
+                            'country'
                     ])) {
             return view("product.show", compact('code'));
         }
