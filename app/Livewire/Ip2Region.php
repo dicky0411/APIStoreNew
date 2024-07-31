@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Ip2Region extends Component
 {
-    public $ip = '237.84.2.178';
+    public $ip = '103.231.84.50';
     public $region;
 
     public $errorMessage = "";
