@@ -138,6 +138,12 @@ class ProductController extends Controller
                 'description' => 'This API uses existing database to estimate multiple possible nationality of a person based on a name input',
                 'code' => 'nationality'
             ],
+            [
+                'image' => 'affirmation.jpeg',
+                'title' => 'Affirmation API',
+                'description' => 'Feeling down? This API generates a quote to motivate you and brighten your day',
+                'code' => 'affirmation'
+            ],
 
 
         ];
@@ -171,7 +177,9 @@ class ProductController extends Controller
                             'country',
                             'marvel',
                             'age-guesser',
-                            'nationality'
+                            'nationality',
+                            'affirmation'
+
                     ])) {
             return view("product.show", compact('code'));
         }
