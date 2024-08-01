@@ -4,89 +4,101 @@
     <style>
         /* General Container Styles */
         .container {
-            background: linear-gradient(135deg, #0f0f0f, #1a1a1a); /* Dark gradient for depth */
-            padding: 4rem 2rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px); /* Holographic effect */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            background: #f9f9f9; /* Light background */
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border: 1px solid #e0e0e0; /* Light border */
         }
 
         /* Card Styles */
         .card {
-            border: 2px solid #333;
-            border-radius: 16px;
-            background: rgba(34, 34, 34, 0.8); /* Semi-transparent dark background */
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #ffffff; /* White background */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* Neon shadow */
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 255, 255, 0.1); /* Neon overlay */
-            mix-blend-mode: screen;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .card:hover::before {
-            opacity: 0.3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Slightly enhanced shadow */
         }
 
         .card-img-top {
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-            filter: brightness(0.7); /* Darker image effect */
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            filter: brightness(0.9); /* Slightly darker image */
         }
 
         /* Button Styles */
         .btn-custom {
-            background: linear-gradient(90deg, #00aaff, #00ffff); /* Neon gradient */
+            background: #007bff; /* Blue button */
             border: none;
             color: #fff;
-            border-radius: 8px;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 4px;
+            transition: background 0.3s ease, transform 0.3s ease;
             font-weight: bold;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             text-transform: uppercase;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Neon glow */
         }
 
         .btn-custom:hover {
-            background: linear-gradient(90deg, #00ffff, #00aaff); /* Inverted gradient */
+            background: #0056b3; /* Darker blue on hover */
             transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.9); /* Enhanced glow */
         }
 
         /* Title and Text Styles */
         .card-title {
-            color: #00eaff; /* Bright cyan */
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 1.5px;
+            color: #333333; /* Darker text */
+            font-family: 'Noto Serif', serif;
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
         }
 
         .card-text {
-            color: #b0b0b0; /* Light gray */
-            font-family: 'Roboto', sans-serif;
+            color: #666666; /* Gray text */
+            font-family: 'Noto Serif', serif;
             font-size: 1rem;
             line-height: 1.4;
         }
+
+        /* Header Styles */
+        header h1, header p {
+            color: #333333; /* Darker text for header */
+        }
+
+        h2 {
+            color: #333333; /* Darker text for subheader */
+        }
     </style>
     <div class="container mt-5">
+        @if (session('success'))
+            <div class="alert alert-success mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger mb-4">
+                <ul class="list-unstyled">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <!-- Minimalistic Header -->
+        <header class="mb-5">
+            <h1 class="display-4" style="font-family: 'Noto Serif', serif;">API Store</h1>
+            <p class="lead" style="font-family: 'Noto Serif', serif;">Welcome to APIStore. Discover APIs for various needs.</p>
+        </header>
+
+        <h2 class="mb-4" style="font-family: 'Noto Serif', serif;">Recommended APIs</h2>
+
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach ($products as $product)
                 <div class="col">

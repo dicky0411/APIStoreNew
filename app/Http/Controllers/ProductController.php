@@ -150,6 +150,12 @@ class ProductController extends Controller
                 'description' => 'Shows the sunrise and sunset time for the location provided',
                 'code' => 'sunrise'
             ],
+            [
+                'image' => 'colorpicker.gif',
+                'title' => 'Color Code API',
+                'description' => 'Transforms color from RGB to Hex, and HSL',
+                'code' => 'colorpicker'
+            ],
 
 
         ];
@@ -185,7 +191,8 @@ class ProductController extends Controller
                             'age-guesser',
                             'nationality',
                             'affirmation',
-                            'sunrise'
+                            'sunrise',
+                            'colorpicker'
 
                     ])) {
             return view("product.show", compact('code'));
