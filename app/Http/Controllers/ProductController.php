@@ -126,6 +126,18 @@ class ProductController extends Controller
                 'description' => 'This API returns the date and the number of days until the next marvels movie and as well as the informations',
                 'code' => 'marvel'
             ],
+            [
+                'image' => 'ageguesser.jpeg',
+                'title' => 'Age Guesser API',
+                'description' => 'This API uses existing database to estimate the age of a person based on a name input',
+                'code' => 'age-guesser'
+            ],
+            [
+                'image' => 'nationality.jpeg',
+                'title' => 'Nationality API',
+                'description' => 'This API uses existing database to estimate multiple possible nationality of a person based on a name input',
+                'code' => 'nationality'
+            ],
 
 
         ];
@@ -157,7 +169,9 @@ class ProductController extends Controller
                             'air-pollutants',
                             'currency',
                             'country',
-                            'marvel'
+                            'marvel',
+                            'age-guesser',
+                            'nationality'
                     ])) {
             return view("product.show", compact('code'));
         }
