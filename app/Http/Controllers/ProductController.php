@@ -110,13 +110,13 @@ class ProductController extends Controller
             ],
             [
                 'image' => 'currencyEx.jpeg',
-                'title' => 'Currency API',
+                'title' => 'Currency Type API',
                 'description' => 'This API returns the type of currency after the country is entered',
                 'code' => 'currency'
             ],
             [
                 'image' => 'country.jpeg',
-                'title' => 'Country API',
+                'title' => 'Country MetaData API',
                 'description' => 'This API returns the meta data about the country of choice when entered by users',
                 'code' => 'country'
             ],
@@ -134,13 +134,13 @@ class ProductController extends Controller
             ],
             [
                 'image' => 'nationality.jpeg',
-                'title' => 'Nationality API',
+                'title' => 'Nationality Guesser API',
                 'description' => 'This API uses existing database to estimate multiple possible nationality of a person based on a name input',
                 'code' => 'nationality'
             ],
             [
                 'image' => 'affirmation.jpeg',
-                'title' => 'Affirmation API',
+                'title' => 'Affirmation Msg API',
                 'description' => 'Feeling down? This API generates a quote to motivate you and brighten your day',
                 'code' => 'affirmation'
             ],
@@ -168,6 +168,19 @@ class ProductController extends Controller
                 'description' => 'This elevation API takes the input from a latitude and longitude and it returns the elevation of the absolute location',
                 'code' => 'elevation'
             ],
+            [
+                'image' => 'lyrics.jpeg',
+                'title' => 'Lyrics Getter API',
+                'description' => 'This Lyrics API takes in an artist and the song title, if the song exists it\'ll output the song lyrics',
+                'code' => 'lyrics'
+            ],
+            [
+                'image' => 'kanye.webp',
+                'title' => 'Kanye Quotes API',
+                'description' => 'Famous artist kanye has out of pocket quotes usually, this API will randomly choose one to display to the user\'s humor',
+                'code' => 'kanye'
+            ],
+
 
 
         ];
@@ -206,7 +219,9 @@ class ProductController extends Controller
                             'sunrise',
                             'colorpicker',
                             'hello',
-                            'elevation'
+                            'elevation',
+                            'lyrics',
+                            'kanye'
 
                     ])) {
             return view("product.show", compact('code'));
