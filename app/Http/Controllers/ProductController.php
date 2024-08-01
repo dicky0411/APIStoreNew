@@ -144,6 +144,12 @@ class ProductController extends Controller
                 'description' => 'Feeling down? This API generates a quote to motivate you and brighten your day',
                 'code' => 'affirmation'
             ],
+            [
+                'image' => 'sunrise.jpeg',
+                'title' => 'Sunrise Sunset API',
+                'description' => 'Shows the sunrise and sunset time for the location provided',
+                'code' => 'sunrise'
+            ],
 
 
         ];
@@ -178,7 +184,8 @@ class ProductController extends Controller
                             'marvel',
                             'age-guesser',
                             'nationality',
-                            'affirmation'
+                            'affirmation',
+                            'sunrise'
 
                     ])) {
             return view("product.show", compact('code'));
