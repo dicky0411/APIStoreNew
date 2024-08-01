@@ -120,6 +120,12 @@ class ProductController extends Controller
                 'description' => 'This API returns the meta data about the country of choice when entered by users',
                 'code' => 'country'
             ],
+            [
+                'image' => 'marveldisney.jpg',
+                'title' => 'Next Marvel Movie API',
+                'description' => 'This API returns the date and the number of days until the next marvels movie and as well as the informations',
+                'code' => 'marvel'
+            ],
 
 
         ];
@@ -150,7 +156,8 @@ class ProductController extends Controller
                             'air-quality',
                             'air-pollutants',
                             'currency',
-                            'country'
+                            'country',
+                            'marvel'
                     ])) {
             return view("product.show", compact('code'));
         }

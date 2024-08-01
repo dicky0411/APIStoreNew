@@ -13,13 +13,15 @@
 
         <div id="result" class="mt-4">
             @if ($fat && $carbohydrates && $calories && $sugar && $protein)
-                <div class="alert alert-success">
-                    For each serving of {{$fruit}}: <br>
-                    Fat: {{$fat}}g <br>
-                    Carbohydrates: {{$carbohydrates}}g <br>
-                    Calories: {{$calories}}g <br>
-                    Sugar: {{$sugar}}g <br>
-                    Protein: {{$protein}}g <br>
+            <div class="alert alert-success">
+                    <strong>Nutrition Information for {{$fruit}}:</strong><br>
+                    <ul class="list-unstyled">
+                        <li><strong>Fat:</strong> {{$fat}}g</li>
+                        <li><strong>Carbohydrates:</strong> {{$carbohydrates}}g</li>
+                        <li><strong>Calories:</strong> {{$calories}}g</li>
+                        <li><strong>Sugar:</strong> {{$sugar}}g</li>
+                        <li><strong>Protein:</strong> {{$protein}}g</li>
+                    </ul>
                 </div> 
             @endif
 

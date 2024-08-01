@@ -1,70 +1,49 @@
 <div>
-    <br>
     <div class="container mt-5">
-        <h1 class="text-center">Covid19 Total Positives Per State</h1>
+        <h1 class="text-center mb-4">Covid19 Total Positives Per State</h1>
 
         <form id="covidForm" class="mt-4" wire:submit.prevent="search">
-            <div class ="form-group">
+            <div class="form-group">
                 <label for="year">Year:</label>
-                <select name="year" id="year" wire:model.defer="year">
+                <select name="year" id="year" wire:model.defer="year" class="form-control">
                     <option value="">Select Year</option>
-                    <option value = "2020">2020</option>
-                    <option value = "2021">2021</option>
-                </select><br>
-                <label for="month">Month:</label>
-                <select name="month" id="month" wire:model.defer="month">
-                    <option value="">Select Month</option>
-                    <option value = "01">January/一月</option>
-                    <option value = "02">Febuary/二月</option>
-                    <option value = "03">March/三月</option>
-                    <option value = "04">April/四月</option>
-                    <option value = "05">May/五月</option>
-                    <option value = "06">June/六月</option>
-                    <option value = "07">July/七月</option>
-                    <option value = "08">August/八月</option>
-                    <option value = "09">September/九月</option>
-                    <option value = "10">October/十月</option>
-                    <option value = "11">November/十一月</option>
-                    <option value = "12">December/十二月</option>
-                </select><br>
-                <label for="day">Day:</label>
-                <select name="day" id="day" wire:model.defer="day" >
-                    <option value="">Select Day</option>   
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
                 </select>
-                <br>
+            </div>
+            
+            <div class="form-group mt-3">
+                <label for="month">Month:</label>
+                <select name="month" id="month" wire:model.defer="month" class="form-control">
+                    <option value="">Select Month</option>
+                    <option value="01">January/一月</option>
+                    <option value="02">February/二月</option>
+                    <option value="03">March/三月</option>
+                    <option value="04">April/四月</option>
+                    <option value="05">May/五月</option>
+                    <option value="06">June/六月</option>
+                    <option value="07">July/七月</option>
+                    <option value="08">August/八月</option>
+                    <option value="09">September/九月</option>
+                    <option value="10">October/十月</option>
+                    <option value="11">November/十一月</option>
+                    <option value="12">December/十二月</option>
+                </select>
+            </div>
+            
+            <div class="form-group mt-3">
+                <label for="day">Day:</label>
+                <select name="day" id="day" wire:model.defer="day" class="form-control">
+                    <option value="">Select Day</option>
+                    @for ($i = 1; $i <= 31; $i++)
+                        <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</option>
+                    @endfor
+                </select>
+            </div>
+            
+            <div class="form-group mt-3">
                 <label for="state">State:</label>
-                <select name="state" id="state" wire:model.defer="state" class="form-control" style="max-width: 150px;">
+                <select name="state" id="state" wire:model.defer="state" class="form-control">
                     <option value="">Select State</option>
                     <option value="al">Alabama</option>
                     <option value="ak">Alaska</option>
@@ -117,26 +96,24 @@
                     <option value="wi">Wisconsin</option>
                     <option value="wy">Wyoming</option>
                 </select>
-
-                
             </div>
-            <button type="submit" class="btn btn-primary btn-block">查询/submit</button>
+            
+            <button type="submit" class="btn btn-primary btn-block mt-4">查询/Submit</button>
         </form>
 
         <div id="result" class="mt-4">
             @if ($positive)
                 <div class="alert alert-success">
-                    On {{$day}}/{{$month}} in {{$year}} <br>
-                    There were {{$positive}} Cases of Coronavirus in the State of {{$state}}
+                    <h4>Covid19 Data for {{ strtoupper($state) }}</h4>
+                    <p>On {{ $day }}/{{ $month }}/{{ $year }}, there were {{ number_format($positive) }} cases of Covid-19 in {{ ucfirst($state) }}.</p>
                 </div>
-                
             @endif
 
-            @if($errorMessage)
+            @if ($errorMessage)
                 <div class="alert alert-danger">
-                    {{$errorMessage}}
+                    {{ $errorMessage }}
                 </div>
             @endif
-        </div>   
+        </div>
     </div>
 </div>
