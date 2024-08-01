@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class AirPollutants extends Component
 {
-    public $city = "toronto";
+    public $city ;
     public $o3, $pm10, $pm25, $uvi;
     public $errorMessage ="";
     public function render()
@@ -15,6 +15,7 @@ class AirPollutants extends Component
         return view('livewire.air-pollutants');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://api.waqi.info/feed/".$this->city."/?token=6ed027a8994d9f8d76d5ec37bd4293e257f69926";
         $response = Http::get($url);
         if ($response->failed()) {

@@ -6,8 +6,8 @@ use Livewire\Component;
 
 class CurEx extends Component
 {
-    public $currency = "CAD";
-    public $amount = 100;
+    public $currency;
+    public $amount ;
     public $currencyPrice;
     public $errorMessage ="";
     public $price;
@@ -17,6 +17,7 @@ class CurEx extends Component
     }
     public function search()
     {
+        $this->errorMessage = "";
         $url = "https://v6.exchangerate-api.com/v6/210205ff24666156ebc8515a/latest/".$this->currency;
         
         $response = Http::get($url);

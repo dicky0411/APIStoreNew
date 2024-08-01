@@ -9,7 +9,7 @@
             <div class="form-group">
                 <label for="ZipCode">Please Type the 5 Digit Zip Code:</label>
                 
-                <input type="text" class="form-control" wire:model.defer="zip_code" id="zipCode" placeholder="例如: 12" required>
+                <input type="text" class="form-control" wire:model.defer="zip_code" id="zipCode" placeholder="Ex: 11332" required>
                 <br>
             </div>
             <button type="submit" class="btn btn-primary btn-block">查询</button>

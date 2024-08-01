@@ -6,7 +6,7 @@
         <form id="ageGuesserForm" class="mt-4" wire:submit.prevent="search">
             <div class="form-group">
                 <label for="name">Enter a Name:</label>
-                <input type="text" class="form-control" wire:model.defer="name" id="name" placeholder="e.g., Richard" required>
+                <input type="text" class="form-control" wire:model.defer="name" id="name" placeholder="Ex: Richard" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block mt-4">Guess</button>
         </form>

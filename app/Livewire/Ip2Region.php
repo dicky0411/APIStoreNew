@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Ip2Region extends Component
 {
-    public $ip = '103.231.84.50';
+    public $ip;
     public $region;
 
     public $errorMessage = "";
@@ -19,6 +19,7 @@ class Ip2Region extends Component
 
     public function search()
     {
+        $this->errorMessage = "";
         $url = "http://ip-api.com/json/{$this->ip}?lang=zh-CN"; // Ensure the URL uses the IP
 
         $response = Http::get($url);

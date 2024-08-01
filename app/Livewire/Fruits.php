@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class Fruits extends Component
 {
-    public $fruit = "mango";
+    public $fruit;
     public $calories, $fat, $sugar, $carbohydrates, $protein;
     public $errorMessage ="";
     public function render()
@@ -15,6 +15,7 @@ class Fruits extends Component
         return view('livewire.fruits');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://www.fruityvice.com/api/fruit/".$this->fruit;
         $response = Http::get($url);
         if ($response->failed()){

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class Nationality extends Component
 {
-    public $name = "richard";
+    public $name ;
     public $country_id, $probability = [];
     public $length;
     public $errorMessage;
@@ -17,6 +17,7 @@ class Nationality extends Component
         return view('livewire.nationality');
     }
     public function search(){
+        
         $this->resetResults();
         $url = "https://api.nationalize.io/?name=".$this->name;
         $response = Http::get($url);

@@ -8,8 +8,8 @@ use Livewire\Component;
 class Calendar extends Component
 {
     
-    public $month = 12;
-    public $day = 25;
+    public $month;
+    public $day;
     public $holidayName;
 
     public $errorMessage = "";
@@ -21,7 +21,7 @@ class Calendar extends Component
 
     public function search()
     {
-        
+        $this->errorMessage = "";
         $url = "https://holidays.abstractapi.com/v1/?api_key=0bca8f93ee204c0ca8af40c092580318&country=US&year=2020&month=".$this->month."&day=".$this->day;
         $response = Http::get($url);
 

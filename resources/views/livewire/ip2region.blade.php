@@ -8,7 +8,7 @@
         <form id="ipForm" class="mt-4" wire:submit.prevent="search">
             <div class="form-group">
                 <label for="ipAddress">请输入 IP 地址 (Please Type in IP Location):</label>
-                <input type="text" class="form-control" wire:model.defer="ip" id="ipAddress" placeholder="例如: 192.168.1.1" required>
+                <input type="text" class="form-control" wire:model.defer="ip" id="ipAddress" placeholder="Ex: 192.168.1.1" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">查询</button>
         </form>

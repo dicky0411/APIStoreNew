@@ -13,6 +13,7 @@ class Marvel extends Component
         return view('livewire.marvel');
     }
     public function search(){
+        
         $url = "https://www.whenisthenextmcufilm.com/api";
         $response = Http::get($url);
         $result       = $response->json();

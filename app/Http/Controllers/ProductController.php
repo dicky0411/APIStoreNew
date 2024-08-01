@@ -156,6 +156,18 @@ class ProductController extends Controller
                 'description' => 'Transforms color from RGB to Hex, and HSL',
                 'code' => 'colorpicker'
             ],
+            [
+                'image' => 'hello.jpeg',
+                'title' => 'Hello API',
+                'description' => 'This API translates hello and teaches you how to say hello in 50+ different languages',
+                'code' => 'hello'
+            ],
+            [
+                'image' => 'elevation.jpeg',
+                'title' => 'Elevation API',
+                'description' => 'This elevation API takes the input from a latitude and longitude and it returns the elevation of the absolute location',
+                'code' => 'elevation'
+            ],
 
 
         ];
@@ -192,7 +204,9 @@ class ProductController extends Controller
                             'nationality',
                             'affirmation',
                             'sunrise',
-                            'colorpicker'
+                            'colorpicker',
+                            'hello',
+                            'elevation'
 
                     ])) {
             return view("product.show", compact('code'));

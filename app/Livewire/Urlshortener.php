@@ -19,6 +19,7 @@ class Urlshortener extends Component
 
     public function search()
     {
+        $this->errorMessage = "";
         // Construct the URL with query parameters
         $url = "https://ulvis.net/api.php?url=" . urlencode($this->link) . "&custom=" . urlencode($this->custom) . "&private=1";
 

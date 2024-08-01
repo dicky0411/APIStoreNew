@@ -7,7 +7,7 @@
         <form id="ipForm" class="mt-4" wire:submit.prevent="search">
             <div class="form-group">
                 <label for="ipAddress">Type in a word that you are unsure of the definitions of</label>
-                <input type="text" class="form-control" wire:model.defer="word" id="ipAddress" placeholder="Example: Apple" required>
+                <input type="text" class="form-control" wire:model.defer="word" id="ipAddress" placeholder="Ex: Apple" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Search</button>
         </form>

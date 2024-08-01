@@ -6,9 +6,9 @@ use Livewire\Component;
 
 class Colorpicker extends Component
 {
-    public $r = 122;
-    public $g = 122;
-    public $b = 122;
+    public $r ;
+    public $g ;
+    public $b ;
     public $hsl, $hex;
     public $errorMessage;
     public function render()
@@ -16,6 +16,7 @@ class Colorpicker extends Component
         return view('livewire.colorpicker');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://color.serialif.com/".$this->r.",".$this->g.",".$this->b;
         $response = Http::get($url);
         

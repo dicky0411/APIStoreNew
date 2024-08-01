@@ -7,6 +7,7 @@
             <div class="form-group">
                 <label for="currency">Choose a currency:</label>
                 <select name="currency" id="currency" wire:model.defer="currency" class="form-control">
+                    <option value="">Select Currency</option>
                     <option value="USD">USD/美元</option>
                     <option value="EUR">EURO/欧币</option>
                     <option value="CNY">YUAN/元</option>
@@ -15,7 +16,7 @@
             
             <div class="form-group mt-3">
                 <label for="cryptoSymbol">Please Type the Currency Symbol / 请输入货币符号</label>
-                <input type="text" class="form-control" wire:model.defer="symbol" id="currencySymbol" placeholder="e.g., BTC, ETH" required>
+                <input type="text" class="form-control" wire:model.defer="symbol" id="currencySymbol" placeholder="Ex: BTC, ETH" required>
             </div>
             
             <button type="submit" class="btn btn-primary btn-block mt-4">查询/Submit</button>

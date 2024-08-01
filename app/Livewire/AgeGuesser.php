@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class AgeGuesser extends Component
 {
-    public $name = "richard";
+    public $name;
     public $age;
     public $errorMessage = '';
     public function render()
@@ -14,6 +14,7 @@ class AgeGuesser extends Component
         return view('livewire.age-guesser');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://api.agify.io/?name=".$this->name;
         $response = Http::get($url);
         if ($response->failed()) {

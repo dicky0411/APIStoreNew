@@ -6,9 +6,9 @@
         <form id="calendarForm" class="mt-4" wire:submit.prevent="search">
             <div class="form-group">
                 <label for="country">Please Type the Country</label>
-                <input type="text" class="form-control" wire:model.defer="country" id="country" placeholder="Canada" required>
+                <input type="text" class="form-control" wire:model.defer="country" id="country" placeholder="Ex: Canada" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block mt-4">查询</button>
+            <button type="submit" class="btn btn-primary btn-block mt-4">Search</button>
         </form>
         
         <div id="result" class="mt-4">

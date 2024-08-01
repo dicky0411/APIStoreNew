@@ -6,7 +6,7 @@
         <form id="cryptoForm" class="mt-4" wire:submit.prevent="search">
             <div class ="form-group">
                 <label for="fruit">Please enter a fruit(example: mango)</label>
-                <input type="text" class="form-control" wire:model.defer="fruit" id="fruit" required>
+                <input type="text" class="form-control" wire:model.defer="fruit" placeholder="Ex: Apple" id="fruit" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">submit</button>
         </form>

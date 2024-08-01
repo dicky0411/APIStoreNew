@@ -13,6 +13,7 @@ class currentIP extends Component
     }
     public function search()
     {
+        
         $url = "https://api.ipify.org/?format=json";
         $response = Http::get($url);
         $result = $response->json();

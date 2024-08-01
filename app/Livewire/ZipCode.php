@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class ZipCode extends Component
 {
-    public $zip_code = '12345';
+    public $zip_code ;
     public $location, $state;
     public $errorMessage = "";
     public function render()
@@ -16,6 +16,7 @@ class ZipCode extends Component
     }
     public function search()
     {
+        $this->errorMessage = "";
         $url = "https://api.zippopotam.us/us/".$this->zip_code;
         $response=Http::get($url);
         if ($response->failed()){

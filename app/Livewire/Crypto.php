@@ -6,8 +6,8 @@ use Livewire\Component;
 
 class Crypto extends Component
 {
-    public $currency = "USD";
-    public $symbol = "BTC";
+    public $currency ;
+    public $symbol ;
     public $currencyPrice;
     public $errorMessage = "";
     public function render()
@@ -16,6 +16,7 @@ class Crypto extends Component
     }
     public function search()
     {
+        $this->errorMessage = "";
         $url = "https://coinlib.io/api/v1/coin?key=f60bde7f07658428&pref=".$this->currency."&symbol=".$this->symbol;
         $response = Http::get($url);
         if ($response->failed()){

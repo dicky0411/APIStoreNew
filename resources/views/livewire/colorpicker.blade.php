@@ -5,15 +5,15 @@
         <form id="calendarForm" class="mt-4" wire:submit.prevent="search">
             <div class="form-group">
                 <label for="calendarMonth">Please Type the value for R:</label>
-                <input type="text" class="form-control" wire:model.defer="r"  required>
+                <input type="text" class="form-control" wire:model.defer="r"  placeholder="..." required>
             </div>
             <div class="form-group mt-3">
                 <label for="calendarDay">Please Type the value for G:</label>
-                <input type="text" class="form-control" wire:model.defer="g"  required>
+                <input type="text" class="form-control" wire:model.defer="g" placeholder="..."  required>
             </div>
             <div class="form-group mt-3">
                 <label for="calendarDay">Please Type the value for B:</label>
-                <input type="text" class="form-control" wire:model.defer="b" required>
+                <input type="text" class="form-control" wire:model.defer="b"placeholder="..." required>
             </div>
             <button type="submit" class="btn btn-primary btn-block mt-4">Search</button>
         </form>

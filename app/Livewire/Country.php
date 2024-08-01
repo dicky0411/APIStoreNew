@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Country extends Component
 {
-    public $country ="Canada";
+    public $country;
     public $capital, $region, $subregion, $population;
     public $independent_check, $unMember_check;
     public $errorMessage;
@@ -15,6 +15,7 @@ class Country extends Component
         return view('livewire.country');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://restcountries.com/v3.1/name/".$this->country;
         $response = Http::get($url);
         if ($response->failed()){

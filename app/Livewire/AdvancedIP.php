@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class AdvancedIP extends Component
 {
-    public $ip = "103.231.84.50";
+    public $ip;
     public $lat, $long, $zip, $company;
     public $errorMessage;
         
@@ -17,6 +17,7 @@ class AdvancedIP extends Component
         return view('livewire.advanced-ip');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://api.ipbase.com/v2/info?apikey=ipb_live_nDGsWNKRDwxPLFURcodIdbvklu16x32pDFgzwywY&ip=".$this->ip;
         $response = Http::get($url);
         if ($response->failed()){

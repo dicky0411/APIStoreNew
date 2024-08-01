@@ -14,6 +14,7 @@ class Currency extends Component
         return view('livewire.currency');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange";
         $response = Http::get($url);
         $result =$response->json();

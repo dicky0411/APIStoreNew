@@ -15,6 +15,7 @@ class ProfanityEraser extends Component
     }
     public function search()
     {
+        
         $url = "https://www.purgomalum.com/service/json?text=".$this->message;
         
         $response = Http::get($url);

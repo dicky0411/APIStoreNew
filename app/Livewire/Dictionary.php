@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class Dictionary extends Component
 
 {
-    public $word = "example";
+    public $word;
     
     public $definition,$defintionsInLoop= [];
     public $errorMessage = '';
@@ -17,6 +17,7 @@ class Dictionary extends Component
         return view('livewire.dictionary');
     }
     public function search(){
+        $this->errorMessage = "";
         $this->definition = null; 
         $url = "https://api.dictionaryapi.dev/api/v2/entries/en/".$this->word;
         $response = Http::get($url);

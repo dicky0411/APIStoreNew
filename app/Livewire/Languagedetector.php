@@ -10,7 +10,7 @@ DetectLanguage::setApiKey("cb851797d3185ede4da01cc0acb4c42b");
 
 class Languagedetector extends Component
 {
-    public $message = "你好";
+    public $message ;
     public $language, $confidence;
 
     public function render()
@@ -20,6 +20,7 @@ class Languagedetector extends Component
 
     public function search()
     {
+        $this->errorMessage = "";
         $results = DetectLanguage::detect($this->message);
         
         if (!empty($results) && is_array($results)) {

@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Http;
 
 class Sunrise extends Component
 {
-    public $latitude = "31.2304";
-    public $longitude = "121.4737";
-    public $timezone = "UTC+8";
+    public $latitude ;
+    public $longitude ;
+    public $timezone ;
     public $sunrise, $sunset;
     public $errorMessage;
 
@@ -18,6 +18,7 @@ class Sunrise extends Component
         return view('livewire.sunrise');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://api.sunrisesunset.io/json?lat=".$this->latitude."&lng=".$this->longitude."&timezone=".$this->timezone."&date=today";
         $response = Http::get($url);
         if ($response->failed()) {

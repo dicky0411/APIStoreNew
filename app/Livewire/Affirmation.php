@@ -14,6 +14,7 @@ class Affirmation extends Component
         return view('livewire.affirmation');
     }
     public function search(){
+        $this->errorMessage = "";
         $url = "https://www.affirmations.dev/";
         $response = Http::get($url);
         if ($response->failed()) {

@@ -17,6 +17,7 @@ class Covid extends Component
         return view('livewire.covid');
     }
     public function search(){
+        $this->errorMessage = "";
         $url2 = $this->state."/".$this->year.$this->month.$this->day.".json";
         $url = "https://api.covidtracking.com/v1/states/".$url2;
         
