@@ -1,3 +1,0 @@
-<div>
-    wild product
-</div>
