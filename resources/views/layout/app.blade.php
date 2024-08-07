@@ -8,40 +8,52 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=ZCOOL+QingKe+HuangYou&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Merriweather:wght@400;700&display=swap'); /* Vintage and classic fonts */
 
         body {
-            background-color: #e8e4de; /* Light beige background */
-            font-family: 'Noto Serif', serif; /* Elegant serif font */
-            background-image: url('images/song_bg_pattern.jpg'); /* Traditional pattern */
+            background-color: #f0e6d6; /* Vintage parchment color */
+            font-family: 'Special Elite', cursive; /* Vintage typewriter font for primary text */
+            background-image: url('images/vintage_bg_pattern.jpg'); /* Vintage pattern */
             background-size: cover;
-            color: #5a3e36; /* Dark text color */
+            color: #5d4037; /* Dark vintage text color */
         }
 
         .container {
             margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            background-color: rgba(250, 235, 215, 0.9); /* Slightly transparent parchment background */
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
-            border: 2px solid #d9b382; /* Bamboo-like border */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Pronounced shadow */
+            border: 3px solid #b08968; /* Vintage border color */
         }
 
-        .alert {
-            margin-top: 20px;
-            background-color: #fff3cd;
-            border-color: #ffeeba;
-            color: #856404;
+        .alert-success {
+            background-color: #d4edda; /* Light green background for success alerts */
+            border-color: #c3e6cb; /* Matching border color */
+            color: #155724; /* Dark green text color */
+            font-family: 'Merriweather', serif; /* Classic serif font for alerts */
+            border-radius: 8px; /* Rounded corners */
+            padding: 15px; /* Padding inside the alert */
+        }
+
+        .alert-danger {
+            background-color: #f8d7da; /* Light vintage red for error alerts */
+            border-color: #f5c6cb; /* Matching border color */
+            color: #721c24; /* Dark vintage text color for error alerts */
+            font-family: 'Merriweather', serif; /* Classic serif font for alerts */
+            border-radius: 8px; /* Rounded corners */
+            padding: 15px; /* Padding inside the alert */
         }
 
         .navbar {
             background-color: #f8f9fa;
-            color: #5a3e36;
-            border-bottom: 2px solid #d9b382;
+            color: #5d4037; /* Dark vintage color */
+            border-bottom: 3px solid #b08968; /* Vintage border color */
         }
 
         .navbar a {
-            color: #5a3e36;
+            color: #5d4037; /* Vintage link color */
+            font-family: 'Merriweather', serif; /* Classic serif font for links */
         }
 
         .card-deck .card {
@@ -53,49 +65,79 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            border: 2px solid #d9b382;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            border: 2px solid #b08968; /* Vintage border color */
+            background-color: rgba(250, 235, 215, 0.9); /* Slightly transparent vintage background */
+            font-family: 'Merriweather', serif; /* Classic serif font for card text */
         }
 
         .card img {
             height: 200px;
             object-fit: cover;
-            border-bottom: 2px solid #d9b382;
+            border-bottom: 2px solid #b08968; /* Vintage border color */
         }
 
         .card-body {
             flex-grow: 1;
+            font-family: 'Merriweather', serif; /* Classic serif font for card body */
+        }
+
+        .card-title {
+            font-family: 'Special Elite', cursive; /* Vintage typewriter font for titles */
+            color: #5d4037; /* Dark vintage text color */
+            font-size: 1.5rem; /* Larger font size for emphasis */
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            font-family: 'Merriweather', serif; /* Classic serif font for text */
+            color: #6f4e28; /* Medium brown text */
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .btn-primary {
-            background-color: #6d4c41; /* Earthy brown button color */
-            border-color: #6d4c41;
+            background-color: #8d6e63; /* Earthy brown button color */
+            border-color: #8d6e63; /* Matching border color */
+            font-family: 'Merriweather', serif; /* Classic serif font for button text */
         }
 
         .btn-primary:hover {
-            background-color: #5a3e36;
-            border-color: #5a3e36;
+            background-color: #6d4c41; /* Darker vintage button color */
+            border-color: #6d4c41; /* Matching border color */
         }
 
         .btn-secondary {
-            background-color: #a67c52;
-            border-color: #a67c52;
+            background-color: #a67c52; /* Earthy vintage button color */
+            border-color: #a67c52; /* Matching border color */
         }
 
         .btn-secondary:hover {
-            background-color: #86664a;
-            border-color: #86664a;
+            background-color: #86664a; /* Darker vintage button color */
+            border-color: #86664a; /* Matching border color */
         }
 
         .footer {
             background-color: #f8f9fa;
             padding: 20px 0;
-            border-top: 2px solid #d9b382;
+            border-top: 3px solid #b08968; /* Vintage border color */
         }
 
         h1, h2, h5 {
-            font-family: 'ZCOOL QingKe HuangYou', serif; /* Traditional Chinese style font */
-            color: #5a3e36; /* Darker earthy tone */
+            font-family: 'Special Elite', cursive; /* Vintage typewriter font */
+            color: #5d4037; /* Dark vintage text color */
+        }
+
+        h1 {
+            font-size: 2.5rem; /* Larger font size for main headings */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for a classic look */
+        }
+
+        h2 {
+            font-size: 2rem; /* Slightly smaller font size for subheadings */
+        }
+
+        h5 {
+            font-size: 1.25rem; /* Font size for smaller headings */
         }
     </style>
 </head>
