@@ -21,7 +21,7 @@ class AdvancedIP extends Component
         $url = "https://api.ipbase.com/v2/info?apikey=ipb_live_nDGsWNKRDwxPLFURcodIdbvklu16x32pDFgzwywY&ip=".$this->ip;
         $response = Http::get($url);
         if ($response->failed()){
-            $this->errorMessage = "请求失败/Check inputs again";
+            $this->errorMessage = "Check inputs again";
             return;
         }
         $result = $response->json();
