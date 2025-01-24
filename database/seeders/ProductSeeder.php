@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
-use Illuminate\Database\Seeder; // Ensure this import is correct
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
 class ProductSeeder extends Seeder
@@ -13,6 +13,14 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+        // Add Urlshortener as the first product
+        Product::firstOrCreate([
+            'code' => 'urlshortener',
+        ], [
+            'name'        => 'URL Shortener',
+            'description' => 'Condense long URLs into short, shareable links',
+        ]);
+
         Product::firstOrCreate([
             'code' => 'ip2region',
         ], [

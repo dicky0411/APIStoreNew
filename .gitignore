@@ -18,3 +18,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/vendor/vlucas
+vendor/vlucas/phpdotenv/src/Util/Str.php
+vendor/vlucas/phpdotenv/src/Util/Regex.php
+/vendor/vlucas
+/vendor/graham-campbell
+/vendor/guzzlehttp
