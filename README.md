@@ -25,7 +25,7 @@ APIStore is a powerful, user-friendly URL shortening and management application 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/APIStoreNew.git
+git clone https://github.com/dkyxhjj/APIStoreNew.git
 cd APIStoreNew
 ```
 
